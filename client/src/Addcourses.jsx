@@ -7,6 +7,7 @@ import {useState} from "react";
 function Addcourses() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [imageLink, setImageLink] = useState("");
 
     return <div style={{display: "flex", justifyContent: "center"}}>
     <Card varint={"outlined"} style={{width: 400, padding: 20}}>
@@ -30,6 +31,16 @@ function Addcourses() {
         style={{marginBottom: 10}}
     />
 
+    <TextField 
+        onChange={(e) => {
+            setImageLink(e.target.value);
+        }}
+        fullWidth={true}
+        label="Image link"
+        variant="outlined"
+        style={{marginBottom: 10}}
+    />
+
     <Button
         size={"large"}
         variant="contained"
@@ -46,7 +57,7 @@ function Addcourses() {
                 body: JSON.stringify({
                     title: title,
                     description: description,
-                    imageLink: "",
+                    imageLink: imageLink,
                     published: true
                 }),
                 headers: {

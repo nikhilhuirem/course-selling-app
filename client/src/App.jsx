@@ -6,6 +6,7 @@ import Signup from './Signup';
 import Signin from './Signin';
 import Addcourses from './Addcourses';
 import Courses from './Courses';
+import Course from './Course';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           
           <Route path='/addCourses' element={<Addcourses />}/>
+          <Route path='/course/:courseId' element={<Course />}/>
           <Route path='/Courses' element={<Courses />}/>
           <Route path='/signin' element={<Signin/>}/>
           <Route path='/signup' element={<Signup/>}/>
